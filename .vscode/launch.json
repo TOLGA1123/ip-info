@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-IpInfoApplication<ip-info>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.app.ip_info.IpInfoApplication",
+            "projectName": "ip-info",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
