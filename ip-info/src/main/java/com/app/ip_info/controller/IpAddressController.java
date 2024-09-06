@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/info")
-@CrossOrigin(origins = "http://localhost:3000")
 @Log4j2
 public class IpAddressController {
     @Autowired
@@ -45,6 +44,26 @@ public class IpAddressController {
         try {
             ipService.deleteIpAddressById(id);
             return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+    @PutMapping("/ip/{id}")
+    public ResponseEntity<IpAddress> updateIpAddress(@PathVariable Long id, @RequestBody IpAddress updatedIpAddress) {
+        try {
+            IpAddress ipAddress = ipService.getIpAddressById(id);
+            if (ipAddress != null) {
+                ipAddress.setIp(updatedIpAddress.getIp());
+                ipAddress.setHostName(updatedIpAddress.getHostName());
+                ipAddress.setStatus(updatedIpAddress.getStatus());
+                ipAddress.setLocation(updatedIpAddress.getLocation());
+                ipAddress.setRelatedGroup(updatedIpAddress.getRelatedGroup());
+                ipAddress.setOperatingSystem(updatedIpAddress.getOperatingSystem());
+                ipService.saveIpAddress(ipAddress);
+                return ResponseEntity.ok(ipAddress);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

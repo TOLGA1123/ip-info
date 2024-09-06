@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class IpAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     @Column(name = "IP_ADDRESS")
     private String ip;
     @Column(name = "HOST_NAME")
@@ -26,5 +26,6 @@ public class IpAddress {
     private String location;
     @Column(name = "RELATED_GROUP")
     private String relatedGroup;
-
+    @Column(name = "OPERATING_SYSTEM")
+    private String operatingSystem;
 }
