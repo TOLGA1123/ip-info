@@ -1,6 +1,9 @@
 package com.app.ip_info.service;
 
 import com.app.ip_info.entity.IpAddress;
+import com.app.ip_info.exception.IpAddressAlreadyExistsException;
+import com.app.ip_info.exception.IpAddressNotFoundException;
+import com.app.ip_info.model.IpResponse;
 import com.app.ip_info.repository.IpRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+import static org.springframework.beans.BeanUtils.copyProperties;
 
 @Service
 @Log4j2
@@ -27,7 +32,19 @@ public class IpServiceImpl implements IpService{
     }
 
     @Override
-    public IpAddress saveIpAddress(IpAddress ipAddress) {
+    public IpAddress saveIpAddress(IpAddress ipAddress, boolean isUpdate) {
+        if (!isUpdate) {
+            // Check if the IP address already exists (for add operation)
+            if (ipRepository.existsByIp(ipAddress.getIp())) {
+                throw new IpAddressAlreadyExistsException("IP Address already exists", "IP_ALREADY_EXISTS");
+            }
+        } else {
+            // Check if the IP address already exists (for update operation)
+            IpAddress existingIpAddress = ipRepository.findByIp(ipAddress.getIp());
+            if (existingIpAddress != null && !existingIpAddress.getId().equals(ipAddress.getId())) {
+                throw new IpAddressAlreadyExistsException("IP Address already exists", "IP_ALREADY_EXISTS");
+            }
+        }
         try {
             return ipRepository.save(ipAddress);
         } catch (Exception e) {
@@ -36,14 +53,16 @@ public class IpServiceImpl implements IpService{
         }
     }
 
+
+
     @Override
-    public IpAddress getIpAddressById(Long id) {
-        Optional<IpAddress> ipAddress = ipRepository.findById(id);
-        if (ipAddress.isPresent()) {
-            return ipAddress.get();
-        } else {
-            throw new RuntimeException("IP Address not found for id : " + id);
-        }
+    public IpResponse getIpAddressById(Long id) {
+        IpAddress ipAddress = ipRepository.findById(id)
+                .orElseThrow(
+                        () -> new IpAddressNotFoundException("Ip address with given id is not found", "IP_NOT_FOUND"));
+        IpResponse ipResponse = new IpResponse();
+        copyProperties(ipAddress, ipResponse);
+        return ipResponse;
     }
 
     @Override

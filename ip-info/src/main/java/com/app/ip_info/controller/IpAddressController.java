@@ -1,6 +1,10 @@
 package com.app.ip_info.controller;
 
 import com.app.ip_info.entity.IpAddress;
+import com.app.ip_info.exception.IpAddressAlreadyExistsException;
+import com.app.ip_info.exception.IpAddressNotFoundException;
+import com.app.ip_info.model.IpRequest;
+import com.app.ip_info.model.IpResponse;
 import com.app.ip_info.service.IpService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.beans.BeanUtils.copyProperties;
+
 @RestController
 @RequestMapping("/info")
 @Log4j2
@@ -18,27 +24,30 @@ public class IpAddressController {
     private IpService ipService;
 
     @GetMapping("/ip")
-    public List<IpAddress> getAllIpAddresses(){
+    public List<IpAddress> getAllIpAddresses() {
         return ipService.getAllIpAddresses();
     }
+
     @GetMapping("/ip/{id}")
-    public ResponseEntity<IpAddress> getIpAddressById(@PathVariable Long id) {
-        try {
-            IpAddress ipAddress = ipService.getIpAddressById(id);
-            return ResponseEntity.ok(ipAddress);
-        } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<IpResponse> getIpAddressById(@PathVariable Long id) {
+        IpResponse ipResponse = ipService.getIpAddressById(id);
+        return new ResponseEntity<>(ipResponse, HttpStatus.OK);
     }
+
     @PostMapping("/ip")
     public ResponseEntity<IpAddress> addIpAddress(@RequestBody IpAddress ipAddress) {
         try {
-            IpAddress savedIpAddress = ipService.saveIpAddress(ipAddress);
-            return ResponseEntity.ok(savedIpAddress);
+            IpAddress savedIpAddress = ipService.saveIpAddress(ipAddress, false);
+            return new ResponseEntity<>(savedIpAddress, HttpStatus.CREATED);
+        } catch (IpAddressAlreadyExistsException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body(null);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
+
+
+
     @DeleteMapping("/ip/{id}")
     public ResponseEntity<Void> deleteIpAddress(@PathVariable Long id) {
         try {
@@ -48,24 +57,34 @@ public class IpAddressController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
     @PutMapping("/ip/{id}")
-    public ResponseEntity<IpAddress> updateIpAddress(@PathVariable Long id, @RequestBody IpAddress updatedIpAddress) {
+    public ResponseEntity<IpResponse> updateIpAddress(@PathVariable Long id, @RequestBody IpRequest ipRequest) {
         try {
-            IpAddress ipAddress = ipService.getIpAddressById(id);
-            if (ipAddress != null) {
-                ipAddress.setIp(updatedIpAddress.getIp());
-                ipAddress.setHostName(updatedIpAddress.getHostName());
-                ipAddress.setStatus(updatedIpAddress.getStatus());
-                ipAddress.setLocation(updatedIpAddress.getLocation());
-                ipAddress.setRelatedGroup(updatedIpAddress.getRelatedGroup());
-                ipAddress.setOperatingSystem(updatedIpAddress.getOperatingSystem());
-                ipService.saveIpAddress(ipAddress);
-                return ResponseEntity.ok(ipAddress);
-            } else {
-                return ResponseEntity.notFound().build();
-            }
+            IpResponse existingIpResponse = ipService.getIpAddressById(id);
+
+            existingIpResponse.setIp(ipRequest.getIp());
+            existingIpResponse.setHostName(ipRequest.getHostName());
+            existingIpResponse.setStatus(ipRequest.getStatus());
+            existingIpResponse.setLocation(ipRequest.getLocation());
+            existingIpResponse.setRelatedGroup(ipRequest.getRelatedGroup());
+            existingIpResponse.setOperatingSystem(ipRequest.getOperatingSystem());
+
+            IpAddress updatedIpAddress = new IpAddress();
+            copyProperties(existingIpResponse, updatedIpAddress);
+
+            IpAddress savedIpAddress = ipService.saveIpAddress(updatedIpAddress, true);
+            
+            IpResponse updatedIpResponse = new IpResponse();
+            copyProperties(savedIpAddress, updatedIpResponse);
+
+            return ResponseEntity.ok(updatedIpResponse);
+        } catch (IpAddressNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         } catch (Exception e) {
+            log.error("Error updating IP address", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 }
+
