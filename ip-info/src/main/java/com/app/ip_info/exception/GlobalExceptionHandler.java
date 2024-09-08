@@ -20,7 +20,11 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleIpAddressAlreadyExistsException(IpAddressAlreadyExistsException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
     }
-
+    @ExceptionHandler(FieldEmptyException.class)
+    @ResponseBody
+    public ResponseEntity<String> handleFieldEmptyException(FieldEmptyException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ResponseEntity<String> handleGeneralException(Exception ex) {

@@ -16,16 +16,16 @@ public class IpAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "IP_ADDRESS")
+    @Column(name = "IP_ADDRESS", nullable = false)
     private String ip;
-    @Column(name = "HOST_NAME")
+    @Column(name = "HOST_NAME", nullable = true)
     private String hostName;
-    @Column(name = "STATUS")
+    @Column(name = "STATUS", nullable = true)
     private String status;
-    @Column(name = "LOCATION")
+    @Column(name = "LOCATION", nullable = true)
     private String location;
-    @Column(name = "RELATED_GROUP")
+    @Column(name = "RELATED_GROUP", nullable = true)
     private String relatedGroup;
-    @Column(name = "OPERATING_SYSTEM")
+    @Column(name = "OPERATING_SYSTEM", nullable = true)
     private String operatingSystem;
 }

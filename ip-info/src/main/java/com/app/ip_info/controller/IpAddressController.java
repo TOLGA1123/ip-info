@@ -81,7 +81,11 @@ public class IpAddressController {
             return ResponseEntity.ok(updatedIpResponse);
         } catch (IpAddressNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        } catch (Exception e) {
+        }
+        catch (IpAddressAlreadyExistsException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+        }
+        catch (Exception e) {
             log.error("Error updating IP address", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

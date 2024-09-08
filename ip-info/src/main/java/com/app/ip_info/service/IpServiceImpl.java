@@ -1,6 +1,7 @@
 package com.app.ip_info.service;
 
 import com.app.ip_info.entity.IpAddress;
+import com.app.ip_info.exception.FieldEmptyException;
 import com.app.ip_info.exception.IpAddressAlreadyExistsException;
 import com.app.ip_info.exception.IpAddressNotFoundException;
 import com.app.ip_info.model.IpResponse;
@@ -46,6 +47,9 @@ public class IpServiceImpl implements IpService{
             }
         }
         try {
+            if (ipAddress.getIp() == null || ipAddress.getIp().isEmpty()) {
+                throw new FieldEmptyException("IP address field cannot be empty", "IP_FIELD_EMPTY");
+            }
             return ipRepository.save(ipAddress);
         } catch (Exception e) {
             log.error("Error saving IP address", e);
