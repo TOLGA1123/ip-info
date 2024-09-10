@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eac2b64d-00ed-4967-8ffe-de8a8ac17a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/FieldEmptyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/IpAddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/IpAddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/entity/IpAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/entity/IpAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/IpServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/IpServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

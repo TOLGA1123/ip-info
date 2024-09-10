@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ip_address_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+    # Backend Service
+  backend:
+      build: ./ # Path to your backend repository
+      ports:
+        - "8080:8080"
+      environment:
+        SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/ip_address_db
+        SPRING_DATASOURCE_USERNAME: root
+        SPRING_DATASOURCE_PASSWORD: root
+      depends_on:
+        - mysql
+      networks:
+        - app-network
+    # Frontend Service
+  frontend:
+      build: ../../frontend/frontend # Path to your frontend repository
+      ports:
+        - "3000:3000"         #map port 3000 to containers port 3000
+      networks:
+        - app-network
+volumes:
+  mysql-data:
+
+networks:
+    app-network:
+      driver: bridge
