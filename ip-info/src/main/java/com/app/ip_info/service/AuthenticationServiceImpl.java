@@ -67,4 +67,9 @@ public class AuthenticationServiceImpl implements AuthenticationService{
             throw e;
         }
     }
+
+    @Override
+    public void deleteUserById(Long userId) {
+        userRepository.deleteById(userId);
+    }
 }

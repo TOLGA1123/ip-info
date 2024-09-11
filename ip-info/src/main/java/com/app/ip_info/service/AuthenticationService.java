@@ -16,4 +16,6 @@ public interface AuthenticationService {
     User authenticate(LoginRequest input);
 
     List<User> getAllUsers();
+
+    void deleteUserById(Long userId);
 }

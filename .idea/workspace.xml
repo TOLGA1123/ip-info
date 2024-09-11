@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eac2b64d-00ed-4967-8ffe-de8a8ac17a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/PasswordEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/UsernameAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
