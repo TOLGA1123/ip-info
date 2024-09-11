@@ -1,25 +1,14 @@
 package com.app.ip_info.controller;
 
 import com.app.ip_info.entity.User;
-import com.app.ip_info.model.JwtResponse;
 import com.app.ip_info.model.LoginRequest;
 import com.app.ip_info.model.LoginResponse;
-import com.app.ip_info.model.RegisterRequest;
-import com.app.ip_info.repository.UserRepository;
-import com.app.ip_info.service.AuthenticationService;
+import com.app.ip_info.service.AuthenticationServiceImpl;
 import com.app.ip_info.service.JwtService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,19 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
     private final JwtService jwtService;
 
-    private final AuthenticationService authenticationService;
+    private final AuthenticationServiceImpl authenticationService;
 
-    public AuthenticationController(JwtService jwtService, AuthenticationService authenticationService) {
+    public AuthenticationController(JwtService jwtService, AuthenticationServiceImpl authenticationService) {
         this.jwtService = jwtService;
         this.authenticationService = authenticationService;
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<User> register(@RequestBody RegisterRequest registerRequest) {
-        User registeredUser = authenticationService.signup(registerRequest);
-
-        return ResponseEntity.ok(registeredUser);
-    }
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginRequest loginRequest) {
@@ -56,7 +39,8 @@ public class AuthenticationController {
 
             LoginResponse loginResponse = new LoginResponse()
                     .setToken(jwtToken)
-                    .setExpiresIn(jwtService.getExpirationTime());
+                    .setExpiresIn(jwtService.getExpirationTime())
+                    .setRole(authenticatedUser.getRole());
 
             log.info("Authentication successful. JWT Token: {}", jwtToken);
 

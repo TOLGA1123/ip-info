@@ -30,4 +30,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleGeneralException(Exception ex) {
         return new ResponseEntity<>("An error occurred: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+    @ExceptionHandler(UsernameAlreadyExistsException.class)
+    public ResponseEntity<String> handleUsernameAlreadyExistsException(UsernameAlreadyExistsException ex) {
+        // Return a meaningful error message and status code
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+    }
 }

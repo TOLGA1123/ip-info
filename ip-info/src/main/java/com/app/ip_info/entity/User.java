@@ -1,5 +1,6 @@
 package com.app.ip_info.entity;
 
+import com.app.ip_info.model.Role;
 import lombok.*;
 
 import jakarta.persistence.*;
@@ -26,6 +27,9 @@ public class User implements UserDetails {
     @Column(name = "PASSWORD")
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();
@@ -50,5 +54,6 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
     }
+
 }
 

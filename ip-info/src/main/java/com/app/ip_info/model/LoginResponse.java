@@ -2,9 +2,12 @@ package com.app.ip_info.model;
 
 import lombok.*;
 
+@Getter
 public class LoginResponse {
+    // Getter methods
     private String token;
     private Long expiresIn;
+    private Role role;
 
     public LoginResponse setToken(String token) {
         this.token = token;
@@ -15,13 +18,9 @@ public class LoginResponse {
         this.expiresIn = expiresIn;
         return this;
     }
-
-    // Getter methods
-    public String getToken() {
-        return token;
+    public LoginResponse setRole(Role role) {
+        this.role = role;
+        return this;
     }
 
-    public Long getExpiresIn() {
-        return expiresIn;
-    }
 }

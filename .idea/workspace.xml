@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eac2b64d-00ed-4967-8ffe-de8a8ac17a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ip-info/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/PasswordEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/UsernameAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -49,21 +59,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.IpInfoApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/ip-info&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.IpInfoApplication.executor": "Run",
+    "Application.PasswordEncoder.executor": "Run",
+    "Application.PasswordEncoderUtil.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/USER/Desktop/ip-info"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.app.ip_info.exception" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.IpInfoApplication">
     <configuration name="IpInfoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.app.ip_info.IpInfoApplication" />
       <module name="ip-info" />
@@ -77,9 +90,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PasswordEncoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.ip_info.PasswordEncoder" />
+      <module name="ip-info" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.ip_info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasswordEncoderUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.ip_info.config.PasswordEncoderUtil" />
+      <module name="ip-info" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.ip_info.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.IpInfoApplication" />
+        <item itemvalue="Application.PasswordEncoder" />
+        <item itemvalue="Application.PasswordEncoderUtil" />
       </list>
     </recent_temporary>
   </component>
