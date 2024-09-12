@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eac2b64d-00ed-4967-8ffe-de8a8ac17a6e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/HostNameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/entity/HostName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/HostNameRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/HostNameService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/HostNameServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/service/AuthenticationServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -50,18 +52,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.IpInfoApplication.executor": "Run",
-    "Application.PasswordEncoder.executor": "Run",
-    "Application.PasswordEncoderUtil.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/USER/Desktop/ip-info"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.IpInfoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PasswordEncoder.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PasswordEncoderUtil.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/ip-info&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.app.ip_info.exception" />
