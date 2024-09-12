@@ -24,7 +24,7 @@ public class HostNameController {
     }
 
     @PostMapping
-    public ResponseEntity<HostName> addHostName(@RequestBody HostName hostName) {
+    public ResponseEntity<HostName> addHostName(@RequestBody HostName hostName) {   //use model DTO
         HostName createdHostName = hostNameService.addHostName(hostName);
         return new ResponseEntity<>(createdHostName, HttpStatus.CREATED);
     }
