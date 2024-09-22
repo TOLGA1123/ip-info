@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eac2b64d-00ed-4967-8ffe-de8a8ac17a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/HostNameDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/LocationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/OperatingSystemDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/RelatedGroupDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/model/StatusDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/HostNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/HostNameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/OperatingSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/OperatingSystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/RelatedGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/RelatedGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/StatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/controller/StatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/IpRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/IpRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/LocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/OperatingSystemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/OperatingSystemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/RelatedGroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/RelatedGroupRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/StatusRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/StatusRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ip-info/src/main/java/com/app/ip_info/repository/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
